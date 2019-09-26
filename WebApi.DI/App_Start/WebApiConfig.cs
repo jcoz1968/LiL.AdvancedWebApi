@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
 using Unity;
+using Unity.Lifetime;
 using WebApi.DI.Data;
 using WebApi.DI.Data.DependencyResolver;
 
@@ -16,7 +17,7 @@ namespace WebApi.DI
 
             //Configure Unity Container
             var container = new UnityContainer();
-            container.RegisterType<IStudentRepository, StudentRepository>();
+            container.RegisterType<IStudentRepository, StudentRepository>(new TransientLifetimeManager());
             config.DependencyResolver = new UnityResolver(container);
 
             // Web API routes
