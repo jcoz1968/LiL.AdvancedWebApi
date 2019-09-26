@@ -24,11 +24,19 @@ namespace WebApi.DI.Custom
             var controllerName = routeData.Values["controller"].ToString();
 
             string versionNumber = "1";
-            var versionQuery = HttpUtility.ParseQueryString(request.RequestUri.Query);
 
-            if(versionQuery["v"] != null)
+            //var versionQuery = HttpUtility.ParseQueryString(request.RequestUri.Query);
+
+            //if(versionQuery["v"] != null)
+            //{
+            //    versionNumber = versionQuery["v"];
+            //}
+
+            string customHeaderName = "X-Employee-Version";
+
+            if(request.Headers.Contains(customHeaderName))
             {
-                versionNumber = versionQuery["v"];
+                versionNumber = request.Headers.GetValues(customHeaderName).FirstOrDefault();
             }
 
             if(versionNumber == "1")

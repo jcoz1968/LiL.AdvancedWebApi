@@ -103,7 +103,7 @@
     <Compile Include="Controllers\StudentsV2Controller.cs" />
     <Compile Include="Controllers\StudentsV1Controller.cs" />
     <Compile Include="CustomPolicies\CustomCorsPolicyAttribute.cs" />
-    <Compile Include="Custom\CustomControllerSelector.cs" />
+    <Compile Include="CustomSelectors\CustomControllerSelector.cs" />
     <Compile Include="Data\DependencyResolver\UnityResolver.cs" />
     <Compile Include="Data\IStudentRepository.cs" />
     <Compile Include="Data\StudentRepository.cs" />
