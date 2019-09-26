@@ -7,6 +7,7 @@ using System.Web.Http.Dispatcher;
 using Unity;
 using Unity.Lifetime;
 using WebApi.DI.Custom;
+using WebApi.DI.CustomHandlers;
 using WebApi.DI.Data;
 using WebApi.DI.Data.DependencyResolver;
 
@@ -17,6 +18,11 @@ namespace WebApi.DI
         public static void Register(HttpConfiguration config)
         {
             // Web API configuration and services
+
+            // Custom Message Handlers
+            //config.MessageHandlers.Add(new RequestValidateHandler());
+            //config.MessageHandlers.Add(new MethodOverrideHandler());
+            config.MessageHandlers.Add(new CustomHeaderHandler());
 
             // CORS
             config.EnableCors();
