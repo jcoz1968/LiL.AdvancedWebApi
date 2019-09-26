@@ -10,6 +10,7 @@ namespace WebApi.DI.Data
     public interface IStudentRepository
     {
         IEnumerable<Student> GetAll();
+        IEnumerable<StudentV2> GetAllV2();
         Student GetStudentById(int id);
     }
 }

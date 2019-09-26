@@ -100,7 +100,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Controllers\StudentsController.cs" />
+    <Compile Include="Controllers\StudentsV2Controller.cs" />
+    <Compile Include="Controllers\StudentsV1Controller.cs" />
     <Compile Include="CustomPolicies\CustomCorsPolicyAttribute.cs" />
     <Compile Include="Data\DependencyResolver\UnityResolver.cs" />
     <Compile Include="Data\IStudentRepository.cs" />
@@ -109,6 +110,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Student.cs" />
+    <Compile Include="Models\StudentV2.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
