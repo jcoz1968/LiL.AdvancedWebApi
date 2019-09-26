@@ -10,10 +10,13 @@ namespace WebApi.DI.Controllers
 {
     public class StudentsController : ApiController
     {
-        private StudentRepository _repository = new StudentRepository();
+        //private StudentRepository _repository = new StudentRepository();
 
-        public StudentsController()
+        private IStudentRepository _repository;
+
+        public StudentsController(IStudentRepository repository)
         {
+            _repository = repository;
         }
 
         public IHttpActionResult Get()
