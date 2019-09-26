@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="jumbotron">
+    <input type="button" 
+           class="btn btn-success" 
+           value="Get All Students" 
+           onclick="getAllStudents()" />
+</div>
+
+<script>
+    var serviceUrl = 'http://localhost:55319/api/students';
+
+    function getAllStudents() {
+        $.ajax({
+            type: 'get',
+            url: serviceUrl
+        }).done(function (data) {
+            console.log(data);
+        }).fail(function (jqXHR, textStatus, errorThrown) {
+            console.log(jqXHR.responseText || textStatus);
+        })
+    }
+</script>
+
