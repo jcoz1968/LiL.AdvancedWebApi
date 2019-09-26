@@ -11,6 +11,12 @@ namespace WebApi.OData.Controllers
     {
         AppDbContext db = new AppDbContext();
 
+        [EnableQuery]
+        public IQueryable<Student> Get()
+        {
+            return db.Students;
+        }
+
         private bool StudentExists(int key)
         {
             return db.Students.Any(n => n.Id == key);

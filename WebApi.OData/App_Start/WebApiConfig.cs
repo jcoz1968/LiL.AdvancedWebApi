@@ -26,6 +26,7 @@ namespace WebApi.OData
             // OData Configuration
             ODataModelBuilder builder = new ODataConventionModelBuilder();
             builder.EntitySet<Student>("Students");
+            config.Select().Expand().Filter().OrderBy().Count();
 
             config.MapODataServiceRoute(routeName: "ODataRoute", routePrefix: null, model: builder.GetEdmModel());
 
