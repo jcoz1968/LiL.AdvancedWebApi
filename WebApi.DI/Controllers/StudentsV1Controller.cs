@@ -12,13 +12,13 @@ namespace WebApi.DI.Controllers
 {
     //[EnableCors(origins:"http://test.com, http://localhost:58969", "*", methods:"post", exposedHeaders:"*")]
     [CustomCorsPolicy]
-    public class StudentsController : ApiController
+    public class StudentsV1Controller : ApiController
     {
         //private StudentRepository _repository = new StudentRepository();
 
         private IStudentRepository _repository;
 
-        public StudentsController(IStudentRepository repository)
+        public StudentsV1Controller(IStudentRepository repository)
         {
             _repository = repository;
         }
