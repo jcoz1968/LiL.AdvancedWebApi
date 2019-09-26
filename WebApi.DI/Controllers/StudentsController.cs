@@ -9,7 +9,7 @@ using WebApi.DI.Data;
 
 namespace WebApi.DI.Controllers
 {
-    [EnableCors("*", "*", "*")]
+    [EnableCors(origins:"http://test.com, http://localhost:58969", "*", methods:"post", exposedHeaders:"*")]
     public class StudentsController : ApiController
     {
         //private StudentRepository _repository = new StudentRepository();
