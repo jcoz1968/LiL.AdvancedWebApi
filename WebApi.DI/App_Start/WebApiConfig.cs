@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http.Headers;
 using System.Web.Http;
 using Unity;
 using Unity.Lifetime;
@@ -26,10 +27,26 @@ namespace WebApi.DI
             // Web API routes
             config.MapHttpAttributeRoutes();
 
+            //config.Routes.MapHttpRoute(
+            //    name: "DefaultApi",
+            //    routeTemplate: "api/{controller}/{id}",
+            //    defaults: new { id = RouteParameter.Optional }
+            //);
+
+            // JSON Formatter
+
+            config.Formatters.JsonFormatter.SupportedMediaTypes.Add(new MediaTypeHeaderValue("text/html"));
+
             config.Routes.MapHttpRoute(
-                name: "DefaultApi",
-                routeTemplate: "api/{controller}/{id}",
-                defaults: new { id = RouteParameter.Optional }
+                name: "StudentsV1",
+                routeTemplate: "api/v1/students/{id}",
+                defaults: new { controller="StudentsV1", id = RouteParameter.Optional }
+            );
+
+            config.Routes.MapHttpRoute(
+                name: "StudentsV2",
+                routeTemplate: "api/v2/students/{id}",
+                defaults: new { controller = "StudentsV2", id = RouteParameter.Optional }
             );
         }
     }
