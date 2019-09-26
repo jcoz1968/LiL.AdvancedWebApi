@@ -6,12 +6,12 @@ using System.Web;
 
 namespace WebApi.OData.Models
 {
-    public class AppDbContext : DbContext
+    public class AppDbContext:DbContext
     {
-        public DbSet<Student> Students { get; set; }
-        public AppDbContext() : base()
+        public AppDbContext():base()
         {
-
+            this.Database.Connection.ConnectionString = @"Data Source=(localdb)\mssqllocaldb; Integrated Security=true; Initial Catalog=schooldb";
         }
+        public DbSet<Student> Students { get; set; }
     }
 }
