@@ -101,6 +101,7 @@
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\StudentsController.cs" />
+    <Compile Include="CustomPolicies\CustomCorsPolicyAttribute.cs" />
     <Compile Include="Data\DependencyResolver\UnityResolver.cs" />
     <Compile Include="Data\IStudentRepository.cs" />
     <Compile Include="Data\StudentRepository.cs" />
@@ -121,7 +122,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="CustomPolicies\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
