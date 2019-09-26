@@ -15,7 +15,10 @@ namespace WebApi.DI
         {
             // Web API configuration and services
 
-            //Configure Unity Container
+            // CORS
+            config.EnableCors();
+
+            // Configure Unity Container
             var container = new UnityContainer();
             container.RegisterType<IStudentRepository, StudentRepository>(new TransientLifetimeManager());
             config.DependencyResolver = new UnityResolver(container);

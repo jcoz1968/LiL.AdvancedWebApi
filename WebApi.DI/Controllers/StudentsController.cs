@@ -4,10 +4,12 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Cors;
 using WebApi.DI.Data;
 
 namespace WebApi.DI.Controllers
 {
+    [EnableCors("*", "*", "*")]
     public class StudentsController : ApiController
     {
         //private StudentRepository _repository = new StudentRepository();
