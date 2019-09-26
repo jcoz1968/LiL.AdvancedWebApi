@@ -20,8 +20,9 @@ namespace WebApi.DI
             // Web API configuration and services
 
             // Custom Message Handlers
-            config.MessageHandlers.Add(new RequestValidateHandler());
-            config.MessageHandlers.Add(new MethodOverrideHandler());
+            //config.MessageHandlers.Add(new RequestValidateHandler());
+            //config.MessageHandlers.Add(new MethodOverrideHandler());
+            config.MessageHandlers.Add(new CustomHeaderHandler());
 
             // CORS
             config.EnableCors();

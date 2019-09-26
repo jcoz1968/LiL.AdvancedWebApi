@@ -102,6 +102,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\StudentsV2Controller.cs" />
     <Compile Include="Controllers\StudentsV1Controller.cs" />
+    <Compile Include="CustomHandlers\CustomHeaderHandler.cs" />
     <Compile Include="CustomHandlers\MethodOverrideHandler.cs" />
     <Compile Include="CustomHandlers\RequestValidateHandler.cs" />
     <Compile Include="CustomPolicies\CustomCorsPolicyAttribute.cs" />
