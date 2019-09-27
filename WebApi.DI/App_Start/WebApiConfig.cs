@@ -35,7 +35,7 @@ namespace WebApi.DI
             // Web API routes
             config.MapHttpAttributeRoutes();
 
-            config.Services.Replace(typeof(IHttpControllerSelector), new CustomControllerSelector(config));
+            // config.Services.Replace(typeof(IHttpControllerSelector), new CustomControllerSelector(config));
 
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",

@@ -100,6 +100,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\CookiesController.cs" />
     <Compile Include="Controllers\StudentsV2Controller.cs" />
     <Compile Include="Controllers\StudentsV1Controller.cs" />
     <Compile Include="CustomHandlers\CustomHeaderHandler.cs" />
