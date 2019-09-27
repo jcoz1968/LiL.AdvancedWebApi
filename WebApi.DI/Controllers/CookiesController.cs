@@ -5,6 +5,7 @@ using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Web.Http;
+using WebApi.DI.CustomHandlers;
 
 namespace WebApi.DI.Controllers
 {
@@ -35,5 +36,13 @@ namespace WebApi.DI.Controllers
             }
             return Ok(sessionId);
         }
+
+        [Route("api/getcookiehandler")]
+        public IHttpActionResult GetCookieHandler()
+        {
+            string sessionId = Request.Properties[SessionIdHandler.SessionIdToken] as string;
+            return Ok(sessionId);
+        }
+
     }
 }

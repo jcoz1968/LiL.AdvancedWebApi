@@ -22,7 +22,8 @@ namespace WebApi.DI
             // Custom Message Handlers
             //config.MessageHandlers.Add(new RequestValidateHandler());
             //config.MessageHandlers.Add(new MethodOverrideHandler());
-            config.MessageHandlers.Add(new CustomHeaderHandler());
+            //config.MessageHandlers.Add(new CustomHeaderHandler());
+            config.MessageHandlers.Add(new SessionIdHandler());
 
             // CORS
             config.EnableCors();

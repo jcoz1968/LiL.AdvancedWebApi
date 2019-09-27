@@ -106,6 +106,7 @@
     <Compile Include="CustomHandlers\CustomHeaderHandler.cs" />
     <Compile Include="CustomHandlers\MethodOverrideHandler.cs" />
     <Compile Include="CustomHandlers\RequestValidateHandler.cs" />
+    <Compile Include="CustomHandlers\SessionIdHandler.cs" />
     <Compile Include="CustomPolicies\CustomCorsPolicyAttribute.cs" />
     <Compile Include="CustomSelectors\CustomControllerSelector.cs" />
     <Compile Include="Data\DependencyResolver\UnityResolver.cs" />
