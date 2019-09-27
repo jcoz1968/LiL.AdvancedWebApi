@@ -22,7 +22,8 @@ namespace WebApi.DI
             // Custom Message Handlers
             //config.MessageHandlers.Add(new RequestValidateHandler());
             //config.MessageHandlers.Add(new MethodOverrideHandler());
-            config.MessageHandlers.Add(new CustomHeaderHandler());
+            //config.MessageHandlers.Add(new CustomHeaderHandler());
+            config.MessageHandlers.Add(new SessionIdHandler());
 
             // CORS
             config.EnableCors();
@@ -35,7 +36,7 @@ namespace WebApi.DI
             // Web API routes
             config.MapHttpAttributeRoutes();
 
-            config.Services.Replace(typeof(IHttpControllerSelector), new CustomControllerSelector(config));
+            // config.Services.Replace(typeof(IHttpControllerSelector), new CustomControllerSelector(config));
 
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",

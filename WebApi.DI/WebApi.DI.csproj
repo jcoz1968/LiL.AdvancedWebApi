@@ -100,11 +100,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\CookiesController.cs" />
     <Compile Include="Controllers\StudentsV2Controller.cs" />
     <Compile Include="Controllers\StudentsV1Controller.cs" />
     <Compile Include="CustomHandlers\CustomHeaderHandler.cs" />
     <Compile Include="CustomHandlers\MethodOverrideHandler.cs" />
     <Compile Include="CustomHandlers\RequestValidateHandler.cs" />
+    <Compile Include="CustomHandlers\SessionIdHandler.cs" />
     <Compile Include="CustomPolicies\CustomCorsPolicyAttribute.cs" />
     <Compile Include="CustomSelectors\CustomControllerSelector.cs" />
     <Compile Include="Data\DependencyResolver\UnityResolver.cs" />
