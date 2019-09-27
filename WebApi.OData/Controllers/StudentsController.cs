@@ -1,7 +1,10 @@
 ﻿using Microsoft.AspNet.OData;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
+using System.Data.Entity.Infrastructure;
 using System.Linq;
+using System.Net;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Http;
@@ -34,6 +37,45 @@ namespace WebApi.OData.Controllers
             db.Students.Add(student);
             await db.SaveChangesAsync();
             return Created(student);
+        }
+
+        public async Task<IHttpActionResult> Put([FromODataUri]int key, Student student)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            if(key != student.Id)
+            {
+                return BadRequest();
+            }
+            db.Entry(student).State = EntityState.Modified;
+            try
+            {
+                await db.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+
+                if(!StudentExists(key))
+                {
+                    return NotFound();
+                }
+                throw;
+            }
+            return Updated(student);
+        }
+
+        public async Task<IHttpActionResult> Delete([FromODataUri]int key)
+        {
+            var student = await db.Students.FindAsync(key);
+            if(student == null)
+            {
+                return NotFound();
+            }
+            db.Students.Remove(student);
+            await db.SaveChangesAsync();
+            return StatusCode(HttpStatusCode.NoContent);
         }
 
         private bool StudentExists(int key)
